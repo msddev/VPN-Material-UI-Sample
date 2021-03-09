@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VpnNewDesign">
         <activity
-            android:name=".ConnectActivity"
+            android:name=".DownloadQrActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +20,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ConnectActivity"
+            android:exported="true" />
+        <activity
             android:name=".SplashActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity android:name=".MainActivity" />
     </application>
 

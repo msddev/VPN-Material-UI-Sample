@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DownloadQrActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/downloadQrLogoIconImage"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/downloadQrLogoTextImage"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/downloadQrLogoTextImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:src="@drawable/img_vika_text"
+        app:layout_constraintBottom_toBottomOf="@+id/downloadQrLogoIconImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/downloadQrLogoIconImage"
+        app:layout_constraintTop_toTopOf="@+id/downloadQrLogoIconImage" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/downloadQrLogoCircleImageA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_circle_aa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/downloadQrLogoIconImage"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/downloadQrLogoCircleImageB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_circle_bb"
+        app:layout_constraintBottom_toBottomOf="@+id/downloadQrLogoCircleImageA"
+        app:layout_constraintEnd_toEndOf="@+id/downloadQrLogoCircleImageA"
+        app:layout_constraintStart_toStartOf="@+id/downloadQrLogoCircleImageA"
+        app:layout_constraintTop_toTopOf="@+id/downloadQrLogoCircleImageA" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/downloadQrDownloadStatusString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/downloading"
+        android:textColor="@color/color_blue_light"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/downloadQrLogoCircleImageA"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <com.mkdev.vpnnewdesign.WaveLoadingView.WaveLoadingView
+        android:id="@+id/downloadQrWaveLoadingView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:wlv_progressValue="50"
+        app:wlv_round_rectangle="true"
+        app:wlv_shapeType="circle"
+        app:wlv_titleCenter="10%"
+        app:wlv_titleCenterColor="@color/white"
+        app:wlv_titleCenterSize="28sp"
+        app:wlv_triangle_direction="north"
+        app:wlv_waveAmplitude="1"
+        app:wlv_waveColor="@color/color_blue_light"
+        app:layout_constraintBottom_toBottomOf="@+id/downloadQrLogoCircleImageB"
+        app:layout_constraintEnd_toEndOf="@+id/downloadQrLogoCircleImageB"
+        app:layout_constraintStart_toStartOf="@+id/downloadQrLogoCircleImageB"
+        app:layout_constraintTop_toTopOf="@+id/downloadQrLogoCircleImageB" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

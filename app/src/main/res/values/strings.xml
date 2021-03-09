@@ -2,4 +2,5 @@
     <string name="app_name">New VPN</string>
     <string name="connect_with_qr_code">Connect With QR Code</string>
     <string name="connect_with_otp">Connect With OTP</string>
+    <string name="downloading">Downloading...</string>
 </resources>
