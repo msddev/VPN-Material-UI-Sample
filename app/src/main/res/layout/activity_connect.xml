@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConnectActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/splashLogoCircleImageA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_circle_a"
+            android:translationY="-80dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/splashLogoCircleImageB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="center"
+            android:src="@drawable/ic_circle_b"
+            android:translationY="-80dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/splashLogoCircleImageC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="center"
+            android:src="@drawable/ic_circle_c"
+            android:translationX="-8dp"
+            android:translationY="-80dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/splashLogoCircleImageD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="center"
+            android:src="@drawable/ic_circle_d"
+            android:translationY="-80dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/splashLogoIconImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="24dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_logo"
+            android:translationY="-100dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/splashLogoTextImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="center"
+            android:src="@drawable/img_vika_text"
+            android:translationY="-30dp" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/splashQrButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/connect_with_qr_code"
+        android:textAllCaps="false"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/splashOtpButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/splashOtpButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/connect_with_otp"
+        android:textAllCaps="false"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

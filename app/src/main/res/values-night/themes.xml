@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/blue_dark_500</item>
         <item name="colorPrimaryVariant">@color/blue_dark_700</item>
-        <item name="colorOnPrimary">?attr/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/white</item>
         <item name="android:colorBackground">?attr/colorPrimaryVariant</item>
 
         <!-- Secondary brand color. -->
