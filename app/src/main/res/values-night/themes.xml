@@ -5,6 +5,8 @@
         <item name="colorPrimary">@color/blue_dark_500</item>
         <item name="colorPrimaryVariant">@color/blue_dark_700</item>
         <item name="colorOnPrimary">?attr/colorPrimaryVariant</item>
+        <item name="android:colorBackground">?attr/colorPrimaryVariant</item>
+
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
@@ -12,5 +14,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Surface</item>
+
+        <!-- Toolbar color -->
+        <item name="colorSurface">?attr/colorPrimaryVariant</item>
     </style>
 </resources>
