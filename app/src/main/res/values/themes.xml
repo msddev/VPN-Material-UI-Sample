@@ -15,5 +15,6 @@
         <!-- Customize your theme here. -->
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Surface</item>
 
+        <item name="primary_text_color">@color/black</item>
     </style>
 </resources>

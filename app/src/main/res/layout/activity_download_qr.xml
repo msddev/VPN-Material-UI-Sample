@@ -73,7 +73,7 @@
         app:wlv_round_rectangle="true"
         app:wlv_shapeType="circle"
         app:wlv_titleCenter="10%"
-        app:wlv_titleCenterColor="@color/white"
+        app:wlv_titleCenterColor="?primary_text_color"
         app:wlv_titleCenterSize="28sp"
         app:wlv_triangle_direction="north"
         app:wlv_waveAmplitude="1"

@@ -18,5 +18,7 @@
 
         <!-- Toolbar color -->
         <item name="colorSurface">?attr/colorPrimaryVariant</item>
+        <item name="primary_text_color">@color/white</item>
+
     </style>
 </resources>
