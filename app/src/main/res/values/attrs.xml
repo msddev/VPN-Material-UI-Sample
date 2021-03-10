@@ -40,5 +40,6 @@
     </declare-styleable>
 
     <attr name="primary_text_color" format="color" />
+    <attr name="secondary_text_color" format="color" />
 
 </resources>

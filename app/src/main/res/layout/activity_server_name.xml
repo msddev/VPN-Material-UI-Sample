@@ -68,7 +68,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/next"
         android:textAllCaps="false"
-        android:textColor="?primary_text_color"
+        android:textColor="?secondary_text_color"
         app:icon="@drawable/ic_baseline_keyboard_arrow_right_24"
         app:iconGravity="end"
         app:iconTint="@color/color_blue_light"

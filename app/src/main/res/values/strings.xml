@@ -6,4 +6,8 @@
     <string name="connection_name">Connection Name</string>
     <string name="connection1">Connection1</string>
     <string name="next">Next</string>
+    <string name="please_enter_your_identification">Please enter your identification.</string>
+    <string name="id">ID</string>
+    <string name="toolbar_title">Back</string>
+
 </resources>

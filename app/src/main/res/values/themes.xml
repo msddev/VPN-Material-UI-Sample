@@ -16,5 +16,6 @@
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Surface</item>
 
         <item name="primary_text_color">@color/black</item>
+        <item name="secondary_text_color">?attr/colorSecondary</item>
     </style>
 </resources>
