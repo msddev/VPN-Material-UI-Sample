@@ -98,20 +98,46 @@
             app:layout_constraintTop_toBottomOf="@+id/otpCodeDownloadStatusString" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/otpCodeNextAction"
             style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/next"
-            android:id="@+id/otpCodeNextAction"
             android:textAllCaps="false"
-            android:visibility="gone"
             android:textColor="?secondary_text_color"
+            android:visibility="gone"
             app:icon="@drawable/ic_baseline_keyboard_arrow_right_24"
             app:iconGravity="end"
-            app:iconTint="@color/color_blue_light"
+            app:iconTint="?secondary_text_color"
             app:layout_constraintEnd_toEndOf="@+id/otpCodeText"
+            app:layout_constraintTop_toBottomOf="@+id/otpCodeRetryReceiveOtpString"
+            tools:visibility="visible" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/otpCodeRetryReceiveOtpString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/don_t_receive_the_otp"
+            android:textColor="?primary_text_color"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/otpCodeText" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/otpCodeRetryReceiveOtpAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resend_otp"
+            android:textColor="?colorSecondary"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/otpCodeRetryReceiveOtpString"
+            app:layout_constraintEnd_toEndOf="@+id/otpCodeText"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/otpCodeRetryReceiveOtpString"
+            app:layout_constraintTop_toTopOf="@+id/otpCodeRetryReceiveOtpString" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

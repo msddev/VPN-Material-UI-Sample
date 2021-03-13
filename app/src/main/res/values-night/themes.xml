@@ -19,7 +19,7 @@
         <!-- Toolbar color -->
         <item name="colorSurface">?attr/colorPrimaryVariant</item>
         <item name="primary_text_color">@color/white</item>
-        <item name="secondary_text_color">?attr/colorSecondary</item>
+        <item name="secondary_text_color">@color/color_green_light</item>
 
     </style>
 </resources>

@@ -11,5 +11,7 @@
     <string name="toolbar_title">Back</string>
     <string name="we_will_send_you_an_one_time_password_on_your_mobile_phone">We will send you an <b>One Time Password</b> on your mobile phone</string>
     <string name="otp_verification">OTP Verification</string>
+    <string name="don_t_receive_the_otp">Don\'t receive the OTP?</string>
+    <string name="resend_otp">Resend OTP</string>
 
 </resources>
