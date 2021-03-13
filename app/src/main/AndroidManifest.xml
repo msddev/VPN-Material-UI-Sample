@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VpnNewDesign">
         <activity
-            android:name=".OtpCodeActivity"
+            android:name=".OtpSuccessActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".OtpIdActivity"
-            android:exported="true"/>
+        <activity android:name=".OtpCodeActivity" />
+        <activity android:name=".OtpIdActivity" />
         <activity android:name=".ServerNameActivity" />
         <activity android:name=".DownloadQrActivity" />
         <activity android:name=".ConnectActivity" />

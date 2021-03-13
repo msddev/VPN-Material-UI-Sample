@@ -13,5 +13,6 @@
     <string name="otp_verification">OTP Verification</string>
     <string name="don_t_receive_the_otp">Don\'t receive the OTP?</string>
     <string name="resend_otp">Resend OTP</string>
+    <string name="new_connection_set_up_successfully_completed">New connection set up successfully completed.</string>
 
 </resources>
