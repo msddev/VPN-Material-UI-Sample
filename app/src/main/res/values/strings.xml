@@ -14,5 +14,8 @@
     <string name="don_t_receive_the_otp">Don\'t receive the OTP?</string>
     <string name="resend_otp">Resend OTP</string>
     <string name="new_connection_set_up_successfully_completed">New connection set up successfully completed.</string>
+    <string name="not_connected">Not Connected</string>
+    <string name="connection_1">Connection 1</string>
+    <string name="select_connection">Select Connection</string>
 
 </resources>
