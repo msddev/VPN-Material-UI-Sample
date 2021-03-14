@@ -21,7 +21,6 @@
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/mainLogoIconImage"
             android:layout_width="25dp"
@@ -75,19 +74,6 @@
             app:layout_constraintStart_toStartOf="@+id/mainLogoCircleImageA"
             app:layout_constraintTop_toTopOf="@+id/mainLogoCircleImageA" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/mainDownloadStatusString"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/not_connected"
-            android:textColor="@color/color_pink_light"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mainLogoCircleImageA"
-            app:layout_constraintVertical_bias="0.2" />
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/mainOnOffAction"
             style="@style/Widget.MaterialComponents.Button.Icon"
@@ -109,6 +95,19 @@
             app:layout_constraintEnd_toEndOf="@+id/mainLogoCircleImageB"
             app:layout_constraintStart_toStartOf="@+id/mainLogoCircleImageB"
             app:layout_constraintTop_toTopOf="@+id/mainLogoCircleImageB" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mainDownloadStatusString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/not_connected"
+            android:textColor="@color/color_pink_light"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainLogoCircleImageA"
+            app:layout_constraintVertical_bias="0.2" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/mainSelectConnectionString"
