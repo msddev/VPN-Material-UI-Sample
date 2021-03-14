@@ -7,38 +7,17 @@
     tools:context=".ConnectActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/splashLogoIconImage"
+        android:id="@+id/splashLogoCircleImageA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="32dp"
+        android:alpha="0.1"
+        android:rotation="180"
         android:scaleType="center"
-        android:src="@drawable/ic_logo"
-        app:layout_constraintBottom_toTopOf="@+id/splashLogoTextImage"
-        app:layout_constraintEnd_toEndOf="@+id/splashLogoCircleImageD"
-        app:layout_constraintStart_toStartOf="@+id/splashLogoCircleImageD"
-        app:layout_constraintTop_toTopOf="@+id/splashLogoCircleImageD"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/splashLogoTextImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/splashLogoIconImage"
-        android:scaleType="center"
-        android:src="@drawable/img_vika_text"
-        app:layout_constraintBottom_toBottomOf="@+id/splashLogoCircleImageD"
-        app:layout_constraintEnd_toEndOf="@+id/splashLogoCircleImageD"
-        app:layout_constraintStart_toStartOf="@+id/splashLogoCircleImageD"
-        app:layout_constraintTop_toBottomOf="@+id/splashLogoIconImage" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/splashLogoCircleImageC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:scaleType="center"
-        android:src="@drawable/ic_circle_c"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:src="@drawable/ic_circle"
+        android:tint="@color/color_pink_circle"
+        android:translationY="125dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,35 +26,75 @@
         android:id="@+id/splashLogoCircleImageB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:alpha="0.1"
+        android:rotation="135"
         android:scaleType="center"
-        android:src="@drawable/ic_circle_b"
-        app:layout_constraintBottom_toBottomOf="@+id/splashLogoCircleImageC"
+        android:scaleX="1.7"
+        android:scaleY="1.7"
+        android:src="@drawable/ic_circle"
+        android:tint="@color/color_pink_circle"
+        android:translationY="125dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/splashLogoCircleImageC" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/splashLogoCircleImageA"
+        android:id="@+id/splashLogoCircleImageC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_circle_a"
-        app:layout_constraintBottom_toBottomOf="@+id/splashLogoCircleImageB"
-        app:layout_constraintEnd_toEndOf="@+id/splashLogoCircleImageB"
+        android:rotation="90"
+        android:scaleType="center"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        android:src="@drawable/ic_circle"
+        android:alpha="0.3"
+        android:translationY="125dp"
+        android:tint="@color/color_pink_circle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/splashLogoCircleImageB" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/splashLogoCircleImageD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:rotation="45"
         android:scaleType="center"
-        android:src="@drawable/ic_circle_d"
-        app:layout_constraintBottom_toBottomOf="@+id/splashLogoCircleImageA"
-        app:layout_constraintEnd_toEndOf="@+id/splashLogoCircleImageA"
-        app:layout_constraintStart_toStartOf="@+id/splashLogoCircleImageA"
-        app:layout_constraintTop_toTopOf="@+id/splashLogoCircleImageA" />
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        android:src="@drawable/ic_circle"
+        android:alpha="0.4"
+        android:translationY="125dp"
+        android:tint="@color/color_pink_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/splashLogoIconImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_logo"
+        android:translationY="125dp"
+        app:layout_constraintBottom_toTopOf="@+id/splashLogoTextImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/splashLogoCircleImageD"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/splashLogoTextImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:translationY="125dp"
+        android:src="@drawable/img_vika_text"
+        app:layout_constraintBottom_toBottomOf="@id/splashLogoCircleImageD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splashLogoIconImage" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/splashQrButton"

@@ -14,4 +14,7 @@
     <color name="color_pink_light">#EE829C</color>
     <color name="color_green_light">#6ECFA5</color>
 
+    <color name="color_pink_circle">#E29FB0</color>
+    <color name="color_pink_dark_circle">#9D4260</color>
+
 </resources>
