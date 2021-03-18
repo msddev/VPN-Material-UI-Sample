@@ -1,14 +1,21 @@
 package com.mkdev.vpnnewdesign
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatDelegate
+import android.os.Handler
+import android.os.Looper
+import com.mkdev.vpnnewdesign.base.BaseActivity
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this@SplashActivity, ConnectActivity::class.java))
+        }, 2000)
     }
+
+    override fun onBackPressed() {}
 }

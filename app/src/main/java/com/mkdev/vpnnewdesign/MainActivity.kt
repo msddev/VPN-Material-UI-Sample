@@ -1,25 +1,27 @@
 package com.mkdev.vpnnewdesign
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.animation.Animation
 import android.view.animation.LinearInterpolator
 import android.view.animation.RotateAnimation
-import androidx.appcompat.app.AppCompatActivity
+import com.mkdev.vpnnewdesign.base.BaseActivity
 import com.mkdev.vpnnewdesign.extensionFun.fadeOutAndInVisible
+import com.mkdev.vpnnewdesign.extensionFun.visible
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_detail.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupToolbar()
 
-        mainOnOffAction.setOnClickListener {
+        mainOnAction.setOnClickListener {
             runRotation(true)
 
             Handler(Looper.getMainLooper()).postDelayed({
@@ -30,14 +32,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fadeOutViews() {
-        mainOnOffAction.fadeOutAndInVisible()
+        mainOnAction.fadeOutAndInVisible()
         mainLogoCircleImageA.fadeOutAndInVisible()
         mainLogoCircleImageB.fadeOutAndInVisible()
+
+        showOffActionButton()
+    }
+
+    private fun showOffActionButton() {
+        mainOffGroup.visible()
     }
 
     private fun setupToolbar() {
         detailToolbar.setNavigationOnClickListener {
-            //handleBackPress()
+            startActivity(Intent(this@MainActivity, MainMenuActivity::class.java))
         }
         detailToolbar.setNavigationIcon(R.drawable.ic_baseline_menu_24)
     }
@@ -76,4 +84,6 @@ class MainActivity : AppCompatActivity() {
             mainLogoCircleImageB.clearAnimation()
         }
     }
+
+    override fun onBackPressed() {}
 }

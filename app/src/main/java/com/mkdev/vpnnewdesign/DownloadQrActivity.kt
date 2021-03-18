@@ -1,11 +1,9 @@
 package com.mkdev.vpnnewdesign
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.mkdev.vpnnewdesign.WaveLoadingView.WaveLoadingView
+import com.mkdev.vpnnewdesign.base.BaseActivity
 
-class DownloadQrActivity : AppCompatActivity() {
-
+class DownloadQrActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

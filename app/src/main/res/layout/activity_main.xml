@@ -75,7 +75,7 @@
             app:layout_constraintTop_toTopOf="@+id/mainLogoCircleImageA" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/mainOnOffAction"
+            android:id="@+id/mainOnAction"
             style="@style/Widget.MaterialComponents.Button.Icon"
             android:layout_width="120dp"
             android:layout_height="120dp"
@@ -96,34 +96,59 @@
             app:layout_constraintStart_toStartOf="@+id/mainLogoCircleImageB"
             app:layout_constraintTop_toTopOf="@+id/mainLogoCircleImageB" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mainOffAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_off"
+            app:layout_constraintBottom_toTopOf="@+id/mainActivityTimerString"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainLogoIconImage"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mainActivityTimerString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="00:00:10"
+            android:textColor="@color/color_gray_light"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/mainDownloadStatusString"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainOffAction"
+            app:layout_constraintVertical_bias="0.2" />
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/mainDownloadStatusString"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/not_connected"
             android:textColor="@color/color_pink_light"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/mainSelectConnectionString"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mainLogoCircleImageA"
+            app:layout_constraintTop_toBottomOf="@+id/mainActivityTimerString"
             app:layout_constraintVertical_bias="0.2" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/mainSelectConnectionString"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="@string/select_connection"
             android:textColor="@color/color_gray_light"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/splashQrButton"
+            app:layout_constraintBottom_toTopOf="@+id/maimQrButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mainDownloadStatusString"
-            app:layout_constraintVertical_bias="0.8" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/splashQrButton"
+            android:id="@+id/maimQrButton"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="32dp"
@@ -148,10 +173,23 @@
             android:elevation="5dp"
             android:rotation="-90"
             android:tint="@color/color_gray_light"
-            app:layout_constraintBottom_toBottomOf="@+id/splashQrButton"
-            app:layout_constraintEnd_toEndOf="@+id/splashQrButton"
-            app:layout_constraintTop_toTopOf="@+id/splashQrButton"
+            app:layout_constraintBottom_toBottomOf="@+id/maimQrButton"
+            app:layout_constraintEnd_toEndOf="@+id/maimQrButton"
+            app:layout_constraintTop_toTopOf="@+id/maimQrButton"
             app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/mainOnGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="mainLogoCircleImageA,mainLogoCircleImageB,mainOnAction" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/mainOffGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="mainOffAction,mainActivityTimerString" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

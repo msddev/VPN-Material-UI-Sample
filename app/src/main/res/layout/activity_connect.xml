@@ -7,7 +7,7 @@
     tools:context=".ConnectActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/splashLogoCircleImageA"
+        android:id="@+id/connectLogoCircleImageA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.1"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/splashLogoCircleImageB"
+        android:id="@+id/connectLogoCircleImageB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.1"
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/splashLogoCircleImageC"
+        android:id="@+id/connectLogoCircleImageC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="90"
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/splashLogoCircleImageD"
+        android:id="@+id/connectLogoCircleImageD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="45"
@@ -71,33 +71,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/splashLogoIconImage"
+        android:id="@+id/connectLogoIconImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:scaleType="center"
         android:src="@drawable/ic_logo"
         android:translationY="110dp"
-        app:layout_constraintBottom_toTopOf="@+id/splashLogoTextImage"
+        app:layout_constraintBottom_toTopOf="@+id/connectLogoTextImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/splashLogoCircleImageD"
+        app:layout_constraintTop_toTopOf="@id/connectLogoCircleImageD"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/splashLogoTextImage"
+        android:id="@+id/connectLogoTextImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="center"
         android:translationY="110dp"
         android:src="@drawable/img_vika_text"
-        app:layout_constraintBottom_toBottomOf="@id/splashLogoCircleImageD"
+        app:layout_constraintBottom_toBottomOf="@id/connectLogoCircleImageD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/splashLogoIconImage" />
+        app:layout_constraintTop_toBottomOf="@+id/connectLogoIconImage" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/splashQrButton"
+        android:id="@+id/connectQrButton"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
@@ -106,10 +106,10 @@
         android:text="@string/connect_with_qr_code"
         android:textAllCaps="false"
         app:cornerRadius="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/splashOtpButton" />
+        app:layout_constraintBottom_toTopOf="@+id/connectOtpButton" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/splashOtpButton"
+        android:id="@+id/connectOtpButton"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
