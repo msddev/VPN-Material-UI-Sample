@@ -17,6 +17,11 @@ class MainMenuActivity : BaseActivity() {
             finish()
             startActivity(Intent(this@MainMenuActivity, AboutActivity::class.java))
         }
+
+        menuFeedbackItem.setOnClickListener {
+            finish()
+            startActivity(Intent(this@MainMenuActivity, FeedbackActivity::class.java))
+        }
     }
 
     private fun setupToolbar() {

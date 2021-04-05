@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeedbackActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <include layout="@layout/app_bar_detail" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/feedbackTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/help_us_improve_vika_vpn"
+            android:textColor="?primary_text_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/feedbackInputTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Please, let us know about your feedback."
+            android:textColor="?primary_text_color"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="@+id/feedbackTitle"
+            app:layout_constraintStart_toStartOf="@+id/feedbackTitle"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackTitle" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otpIdText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_edittext"
+            android:gravity="top"
+            android:hint="@string/your_feedback_opinion"
+            android:lines="10"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/feedbackInputTitle"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/feedbackInputTitle"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackInputTitle">
+
+            <requestFocus />
+        </androidx.appcompat.widget.AppCompatEditText>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/connectQrButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/otpIdText"
+            app:layout_constraintTop_toBottomOf="@+id/otpIdText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
