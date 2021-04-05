@@ -11,8 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VpnNewDesign">
         <activity
-            android:name=".MainMenuActivity"
+            android:name=".AboutActivity"
             android:exported="true"></activity>
+        <activity
+            android:name=".MainMenuActivity"
+            android:exported="true" />
         <activity android:name=".OtpSuccessActivity" />
         <activity android:name=".OtpCodeActivity" />
         <activity android:name=".OtpIdActivity" />

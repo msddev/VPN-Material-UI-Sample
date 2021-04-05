@@ -1,7 +1,9 @@
 package com.mkdev.vpnnewdesign
 
+import android.content.Intent
 import android.os.Bundle
 import com.mkdev.vpnnewdesign.base.BaseActivity
+import kotlinx.android.synthetic.main.activity_main_menu.*
 import kotlinx.android.synthetic.main.app_bar_detail.*
 
 class MainMenuActivity : BaseActivity() {
@@ -10,6 +12,11 @@ class MainMenuActivity : BaseActivity() {
         setContentView(R.layout.activity_main_menu)
 
         setupToolbar()
+
+        menuAboutItem.setOnClickListener {
+            finish()
+            startActivity(Intent(this@MainMenuActivity, AboutActivity::class.java))
+        }
     }
 
     private fun setupToolbar() {
