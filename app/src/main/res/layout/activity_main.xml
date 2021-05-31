@@ -17,6 +17,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
@@ -101,14 +102,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/img_off"
-            app:layout_constraintBottom_toTopOf="@+id/mainActivityTimerString"
+            app:layout_constraintBottom_toTopOf="@+id/mainTimerString"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mainLogoIconImage"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/mainActivityTimerString"
+            android:id="@+id/mainTimerString"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -118,8 +119,7 @@
             app:layout_constraintBottom_toTopOf="@+id/mainDownloadStatusString"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mainOffAction"
-            app:layout_constraintVertical_bias="0.2" />
+            app:layout_constraintTop_toBottomOf="@+id/mainOffAction" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/mainDownloadStatusString"
@@ -132,8 +132,7 @@
             app:layout_constraintBottom_toTopOf="@+id/mainSelectConnectionString"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mainActivityTimerString"
-            app:layout_constraintVertical_bias="0.2" />
+            app:layout_constraintTop_toBottomOf="@+id/mainTimerString" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/mainSelectConnectionString"
@@ -182,6 +181,7 @@
             android:id="@+id/mainOnGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="visible"
             app:constraint_referenced_ids="mainLogoCircleImageA,mainLogoCircleImageB,mainOnAction" />
 
         <androidx.constraintlayout.widget.Group
@@ -189,7 +189,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            app:constraint_referenced_ids="mainOffAction,mainActivityTimerString" />
+            app:constraint_referenced_ids="mainOffAction,mainTimerString" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

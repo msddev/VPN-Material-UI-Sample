@@ -23,5 +23,7 @@
     <string name="help_us_improve_vika_vpn">Help Us Improve VIKA VPN</string>
     <string name="your_feedback_opinion">Your Feedback (Opinion)</string>
     <string name="submit">Submit</string>
+    <string name="back_to_menu">Back to menu</string>
+    <string name="thank_you_for_sharing_your_thoughts_we_appreciate_your_feedback">Thank you for sharing your thoughts. We appreciate your feedback!</string>
 
 </resources>
