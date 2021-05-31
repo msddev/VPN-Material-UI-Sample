@@ -134,13 +134,12 @@
             app:layout_constraintTop_toBottomOf="@+id/mainTimerString" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearLineChart"
+            android:id="@+id/LineChartRoot"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="120dp"
             android:background="@drawable/rounded_curve_shape"
             android:orientation="vertical"
             android:padding="8dp"
-            android:layout_marginBottom="16dp"
             android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/mainSelectConnectionString"
             app:layout_constraintEnd_toEndOf="@+id/maimQrButton"

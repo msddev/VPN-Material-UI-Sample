@@ -78,7 +78,6 @@ class MainActivity : BaseActivity() {
         mainOnAction.fadeOutAndInVisible()
         mainLogoCircleImageA.fadeOutAndInVisible()
         mainLogoCircleImageB.fadeOutAndInVisible()
-        linearLineChart.fadeInAndVisible()
 
         showOffViews()
     }
@@ -96,8 +95,6 @@ class MainActivity : BaseActivity() {
 
     private fun hideOffViews() {
         mainOffGroup.invisible()
-        linearLineChart.invisible()
-
         runSlideDown()
     }
 
@@ -150,6 +147,10 @@ class MainActivity : BaseActivity() {
             duration = 500,
             transY = -(mainOffAction.height / 2).toFloat()
         )
+        LineChartRoot.slideUp(
+            duration = 500,
+            transY = -(mainOffAction.height / 4).toFloat()
+        )
     }
 
     private fun runSlideDown() {
@@ -160,6 +161,7 @@ class MainActivity : BaseActivity() {
             .setDuration(300)
             .setListener(null)
 
+        LineChartRoot.slideDown(duration = 500, 0f)
     }
 
     override fun onBackPressed() {}
