@@ -125,14 +125,124 @@
             android:id="@+id/mainDownloadStatusString"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/not_connected"
             android:textColor="@color/color_pink_light"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/mainSelectConnectionString"
+            app:layout_constraintBottom_toTopOf="@id/mainSelectConnectionString"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mainTimerString" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLineChart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/rounded_curve_shape"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/mainSelectConnectionString"
+            app:layout_constraintEnd_toEndOf="@+id/maimQrButton"
+            app:layout_constraintStart_toStartOf="@+id/maimQrButton"
+            app:layout_constraintTop_toBottomOf="@+id/mainDownloadStatusString"
+            tools:visibility="visible">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mainConnectionQualityTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/connection_quality"
+                android:textColor="@color/color_gray_light"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mainConnectionQualityGoodTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Good"
+                android:textColor="@color/color_gray_light"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/mainConnectionQualityNormalTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mainConnectionQualityTitle"
+                app:layout_constraintVertical_chainStyle="spread" />
+
+            <View
+                android:id="@+id/mainConnectionQualityGoodLine"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:alpha="0.2"
+                android:background="@color/color_gray_light"
+                app:layout_constraintBottom_toBottomOf="@+id/mainConnectionQualityGoodTitle"
+                app:layout_constraintEnd_toEndOf="@id/lineChart"
+                app:layout_constraintStart_toStartOf="@+id/lineChart"
+                app:layout_constraintTop_toTopOf="@+id/mainConnectionQualityGoodTitle" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mainConnectionQualityNormalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Normal"
+                android:textColor="@color/color_gray_light"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/mainConnectionQualityLowTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mainConnectionQualityGoodTitle" />
+
+            <View
+                android:id="@+id/mainConnectionQualityNormalLine"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:alpha="0.2"
+                android:background="@color/color_gray_light"
+                app:layout_constraintBottom_toBottomOf="@+id/mainConnectionQualityNormalTitle"
+                app:layout_constraintEnd_toEndOf="@id/lineChart"
+                app:layout_constraintStart_toStartOf="@+id/lineChart"
+                app:layout_constraintTop_toTopOf="@+id/mainConnectionQualityNormalTitle" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mainConnectionQualityLowTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low"
+                android:textColor="@color/color_gray_light"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mainConnectionQualityNormalTitle" />
+
+            <View
+                android:id="@+id/mainConnectionQualityLowLine"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:alpha="0.2"
+                android:background="@color/color_gray_light"
+                app:layout_constraintBottom_toBottomOf="@+id/mainConnectionQualityLowTitle"
+                app:layout_constraintEnd_toEndOf="@id/lineChart"
+                app:layout_constraintStart_toStartOf="@+id/lineChart"
+                app:layout_constraintTop_toTopOf="@+id/mainConnectionQualityLowTitle" />
+
+            <com.db.williamchart.view.LineChartView
+                android:id="@+id/lineChart"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                app:chart_axis="none"
+                app:chart_gridEffect="dotted"
+                app:chart_labelsColor="#FF70977F"
+                app:chart_labelsSize="10sp"
+                app:chart_lineColor="#ffffff"
+                app:chart_lineThickness="3dp"
+                app:chart_smoothLine="true"
+                app:layout_constraintBottom_toTopOf="@id/mainConnectionQualityLowLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainConnectionQualityNormalTitle"
+                app:layout_constraintTop_toBottomOf="@+id/mainConnectionQualityGoodLine" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/mainSelectConnectionString"

@@ -1,6 +1,7 @@
 package com.mkdev.vpnnewdesign
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -13,10 +14,27 @@ import kotlinx.android.synthetic.main.app_bar_detail.*
 
 class MainActivity : BaseActivity() {
 
+    private val animationDuration = 1000L
+    private val lineSet = listOf(
+        "label1" to 5f,
+        "label2" to 4.5f,
+        "label3" to 4.7f,
+        "label4" to 3.5f,
+        "label5" to 3.6f,
+        "label6" to 7.5f,
+        "label7" to 7.5f,
+        "label8" to 10f,
+        "label9" to 5f,
+        "label10" to 6.5f,
+        "label11" to 3f,
+        "label12" to 4f
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupToolbar()
+        setupChart()
 
         mainOnAction.setOnClickListener {
             runRotationAnimation(true)
@@ -33,10 +51,34 @@ class MainActivity : BaseActivity() {
         }
     }
 
+    private fun setupChart() {
+        /**
+         * Line Chart
+         */
+        lineChart.gradientFillColors =
+            intArrayOf(
+                Color.parseColor("#81FFFFFF"),
+                Color.TRANSPARENT
+            )
+        lineChart.animation.duration = animationDuration
+        /*lineChart.tooltip =
+            SliderTooltip().also {
+                it.color = Color.WHITE
+            }*/
+        lineChart.onDataPointTouchListener = { index, _, _ ->
+            /*lineChartValue.text =
+                lineSet.toList()[index]
+                    .second
+                    .toString()*/
+        }
+        lineChart.animate(lineSet)
+    }
+
     private fun hideOnViews() {
         mainOnAction.fadeOutAndInVisible()
         mainLogoCircleImageA.fadeOutAndInVisible()
         mainLogoCircleImageB.fadeOutAndInVisible()
+        linearLineChart.fadeInAndVisible()
 
         showOffViews()
     }
@@ -54,6 +96,8 @@ class MainActivity : BaseActivity() {
 
     private fun hideOffViews() {
         mainOffGroup.invisible()
+        linearLineChart.invisible()
+
         runSlideDown()
     }
 
