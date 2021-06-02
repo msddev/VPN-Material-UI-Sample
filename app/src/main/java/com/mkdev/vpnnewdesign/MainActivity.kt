@@ -3,32 +3,37 @@ package com.mkdev.vpnnewdesign
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.animation.*
 import com.mkdev.vpnnewdesign.base.BaseActivity
 import com.mkdev.vpnnewdesign.extensionFun.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_otp_code.*
 import kotlinx.android.synthetic.main.app_bar_detail.*
 
 
 class MainActivity : BaseActivity() {
 
-    private val animationDuration = 1000L
-    private val lineSet = listOf(
+    private var timer: CountDownTimer? = null
+    private val animationDuration = 100L
+    private val lineSet = mutableSetOf(
         "label1" to 5f,
         "label2" to 4.5f,
         "label3" to 4.7f,
         "label4" to 3.5f,
         "label5" to 3.6f,
-        "label6" to 7.5f,
-        "label7" to 7.5f,
-        "label8" to 10f,
-        "label9" to 5f,
-        "label10" to 6.5f,
+        "label6" to 5f,
+        "label7" to 4f,
+        "label8" to 2f,
+        "label9" to 1f,
+        "label10" to 5f,
         "label11" to 3f,
         "label12" to 4f
     )
+    private var lableIndex: Int = 12
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,13 +47,32 @@ class MainActivity : BaseActivity() {
             Handler(Looper.getMainLooper()).postDelayed({
                 runRotationAnimation(false)
                 hideOnViews()
-            }, 2000)
+
+                startTimer()
+            }, 1000)
         }
 
         mainOffAction.setOnClickListener {
             hideOffViews()
             showOnViews()
+            timer?.cancel()
         }
+    }
+
+    private fun startTimer() {
+        timer = object : CountDownTimer(120000, 2000) {
+            override fun onTick(millisUntilFinished: Long) {
+                lineSet.remove(lineSet.first())
+                val randomNumber = (1..10).random()
+                Log.d("onTick", randomNumber.toString())
+                lineSet.add("label${lableIndex++}" to randomNumber.toFloat())
+                lineChart.show(lineSet.toList())
+            }
+
+            override fun onFinish() {
+
+            }
+        }.start()
     }
 
     private fun setupChart() {
@@ -60,7 +84,9 @@ class MainActivity : BaseActivity() {
                 Color.parseColor("#81FFFFFF"),
                 Color.TRANSPARENT
             )
-        lineChart.animation.duration = animationDuration
+
+        lineChart.animate().duration = animationDuration
+
         /*lineChart.tooltip =
             SliderTooltip().also {
                 it.color = Color.WHITE
@@ -71,7 +97,7 @@ class MainActivity : BaseActivity() {
                     .second
                     .toString()*/
         }
-        lineChart.animate(lineSet)
+        lineChart.show(lineSet.toList())
     }
 
     private fun hideOnViews() {
@@ -162,6 +188,11 @@ class MainActivity : BaseActivity() {
             .setListener(null)
 
         LineChartRoot.slideDown(duration = 500, 0f)
+    }
+
+    override fun onDestroy() {
+        timer?.cancel()
+        super.onDestroy()
     }
 
     override fun onBackPressed() {}

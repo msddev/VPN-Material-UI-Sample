@@ -136,10 +136,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/LineChartRoot"
             android:layout_width="0dp"
-            android:layout_height="120dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/rounded_curve_shape"
             android:orientation="vertical"
             android:padding="8dp"
+            app:layout_constraintVertical_bias="0.8"
             android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/mainSelectConnectionString"
             app:layout_constraintEnd_toEndOf="@+id/maimQrButton"
@@ -164,21 +165,21 @@
                 android:text="Good"
                 android:textColor="@color/color_gray_light"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toTopOf="@id/mainConnectionQualityNormalTitle"
+                app:layout_constraintBottom_toBottomOf="@id/mainConnectionQualityGoodLine"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mainConnectionQualityTitle"
-                app:layout_constraintVertical_chainStyle="spread" />
+                app:layout_constraintTop_toTopOf="@id/mainConnectionQualityGoodLine"
+                app:layout_constraintVertical_chainStyle="spread_inside" />
 
             <View
                 android:id="@+id/mainConnectionQualityGoodLine"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:alpha="0.2"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@id/lineChart"
                 android:background="@color/color_gray_light"
-                app:layout_constraintBottom_toBottomOf="@+id/mainConnectionQualityGoodTitle"
                 app:layout_constraintEnd_toEndOf="@id/lineChart"
-                app:layout_constraintStart_toStartOf="@+id/lineChart"
-                app:layout_constraintTop_toTopOf="@+id/mainConnectionQualityGoodTitle" />
+                app:layout_constraintTop_toTopOf="@id/lineChart" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/mainConnectionQualityNormalTitle"
@@ -187,20 +188,21 @@
                 android:text="Normal"
                 android:textColor="@color/color_gray_light"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toTopOf="@id/mainConnectionQualityLowTitle"
+                app:layout_constraintBottom_toTopOf="@id/mainConnectionQualityNormalLine"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mainConnectionQualityGoodTitle" />
+                app:layout_constraintTop_toBottomOf="@id/mainConnectionQualityNormalLine" />
 
             <View
                 android:id="@+id/mainConnectionQualityNormalLine"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:alpha="0.2"
+                android:visibility="invisible"
                 android:background="@color/color_gray_light"
-                app:layout_constraintBottom_toBottomOf="@+id/mainConnectionQualityNormalTitle"
+                app:layout_constraintBottom_toBottomOf="@+id/mainConnectionQualityLowLine"
                 app:layout_constraintEnd_toEndOf="@id/lineChart"
-                app:layout_constraintStart_toStartOf="@+id/lineChart"
-                app:layout_constraintTop_toTopOf="@+id/mainConnectionQualityNormalTitle" />
+                app:layout_constraintStart_toStartOf="@id/lineChart"
+                app:layout_constraintTop_toTopOf="@+id/mainConnectionQualityGoodLine" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/mainConnectionQualityLowTitle"
@@ -209,37 +211,38 @@
                 android:text="Low"
                 android:textColor="@color/color_gray_light"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/mainConnectionQualityLowLine"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mainConnectionQualityNormalTitle" />
+                app:layout_constraintTop_toTopOf="@id/mainConnectionQualityLowLine" />
 
             <View
                 android:id="@+id/mainConnectionQualityLowLine"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:alpha="0.2"
+                android:visibility="invisible"
                 android:background="@color/color_gray_light"
-                app:layout_constraintBottom_toBottomOf="@+id/mainConnectionQualityLowTitle"
+                app:layout_constraintBottom_toBottomOf="@id/lineChart"
                 app:layout_constraintEnd_toEndOf="@id/lineChart"
-                app:layout_constraintStart_toStartOf="@+id/lineChart"
-                app:layout_constraintTop_toTopOf="@+id/mainConnectionQualityLowTitle" />
+                app:layout_constraintStart_toStartOf="@id/lineChart" />
 
             <com.db.williamchart.view.LineChartView
                 android:id="@+id/lineChart"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="16dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 app:chart_axis="none"
                 app:chart_gridEffect="dotted"
                 app:chart_labelsColor="#FF70977F"
                 app:chart_labelsSize="10sp"
                 app:chart_lineColor="#ffffff"
-                app:chart_lineThickness="3dp"
+                app:chart_lineThickness="1dp"
                 app:chart_smoothLine="true"
-                app:layout_constraintBottom_toTopOf="@id/mainConnectionQualityLowLine"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/mainConnectionQualityNormalTitle"
-                app:layout_constraintTop_toBottomOf="@+id/mainConnectionQualityGoodLine" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mainConnectionQualityTitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
