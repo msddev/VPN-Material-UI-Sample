@@ -21,19 +21,19 @@ class MainActivity : BaseActivity() {
     private val animationDuration = 100L
     private val lineSet = mutableSetOf(
         "label1" to 5f,
-        "label2" to 4.5f,
-        "label3" to 4.7f,
-        "label4" to 3.5f,
-        "label5" to 3.6f,
-        "label6" to 5f,
-        "label7" to 4f,
-        "label8" to 2f,
-        "label9" to 1f,
-        "label10" to 5f,
-        "label11" to 3f,
-        "label12" to 4f
+        "label2" to 0f,
+        "label3" to 10f,
+        "label4" to 3f,
+        "label5" to 5f,
+        "label6" to 1f,
+        "label7" to 9f,
+        "label8" to 5f,
+        "label9" to 7f,
+        "label10" to 3f,
+        "label11" to 6f,
+        "label12" to 5f
     )
-    private var lableIndex: Int = 12
+    private var labelIndex: Int = 12
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,12 +60,12 @@ class MainActivity : BaseActivity() {
     }
 
     private fun startTimer() {
-        timer = object : CountDownTimer(120000, 2000) {
+        timer = object : CountDownTimer(5*60*1000, 2000) {
             override fun onTick(millisUntilFinished: Long) {
                 lineSet.remove(lineSet.first())
-                val randomNumber = (1..10).random()
+                val randomNumber = (0..10).random()
                 Log.d("onTick", randomNumber.toString())
-                lineSet.add("label${lableIndex++}" to randomNumber.toFloat())
+                lineSet.add("label${labelIndex++}" to randomNumber.toFloat())
                 lineChart.show(lineSet.toList())
             }
 
