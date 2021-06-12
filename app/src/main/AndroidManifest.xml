@@ -11,8 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VpnNewDesign">
         <activity
-            android:name=".SubmitFeedbackActivity"
-            android:exported="true" />
+            android:name=".ConnectionActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SubmitFeedbackActivity" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".MainMenuActivity" />
@@ -22,18 +29,8 @@
         <activity android:name=".ServerNameActivity" />
         <activity android:name=".DownloadQrActivity" />
         <activity android:name=".ConnectActivity" />
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true"/>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
