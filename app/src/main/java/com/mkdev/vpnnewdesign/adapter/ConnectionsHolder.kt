@@ -19,7 +19,7 @@ class ConnectionsHolder(
         onItemActivationClicked: (Int) -> Unit
     ) {
         viewItem.apply {
-            connectionName.text = item.name
+            connectionName.text = item.title
             expandableView.isVisible = item.isSelected
             line.isVisible = adapterPosition != itemsCount - 1
 
