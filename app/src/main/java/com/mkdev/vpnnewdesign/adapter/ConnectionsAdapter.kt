@@ -9,7 +9,8 @@ import com.mkdev.vpnnewdesign.models.ConnectionModel
 
 class ConnectionsAdapter(
     private val dataList: MutableList<ConnectionModel>,
-    private val onItemClicked: ((Int) -> Unit)
+    private val onItemClicked: ((Int) -> Unit),
+    private val onItemActivationClicked: ((Int) -> Unit),
 ) : RecyclerView.Adapter<ConnectionsHolder>() {
 
     override fun onCreateViewHolder(
@@ -20,7 +21,7 @@ class ConnectionsAdapter(
     )
 
     override fun onBindViewHolder(holder: ConnectionsHolder, position: Int) {
-        holder.bindTo(dataList[position], itemCount, onItemClicked)
+        holder.bindTo(dataList[position], itemCount, onItemClicked, onItemActivationClicked)
     }
 
     override fun getItemCount(): Int = dataList.size
