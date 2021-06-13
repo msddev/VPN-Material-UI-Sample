@@ -15,6 +15,24 @@
         <!--<item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
     </style>
 
+    <style name="Widget.App.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton.Positive</item>
+        <!--<item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
+    </style>
+
+    <style name="Widget.App.Button.Negative" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton.Negative</item>
+        <!--<item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
+    </style>
+
+    <style name="ThemeOverlay.App.Button.TextButton.Positive" parent="">
+        <item name="colorPrimary">@color/color_green_light</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.TextButton.Negative" parent="">
+        <item name="colorPrimary">@color/color_pink_light</item>
+    </style>
+
     <style name="ThemeOverlay.App.Button.TextButton" parent="">
         <item name="colorPrimary">@color/white</item>
     </style>
@@ -29,8 +47,6 @@
         <item name="colorPrimary">@color/color_gray_dark</item>
         <item name="hintTextColor">@color/color_gray_dark</item>
         <item name="android:textColorHint">@color/color_gray_dark</item>
-        <item name="boxStrokeColor">@color/color_gray_dark</item>
-        <item name="boxStrokeWidth">2dp</item>
         <item name="counterTextColor">@color/color_gray_dark</item>
     </style>
 </resources>
