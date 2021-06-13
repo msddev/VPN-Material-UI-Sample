@@ -5,6 +5,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.mkdev.vpnnewdesign.R
+import com.mkdev.vpnnewdesign.enums.ItemModifyType
+import com.mkdev.vpnnewdesign.extensionFun.gone
+import com.mkdev.vpnnewdesign.extensionFun.visible
 import com.mkdev.vpnnewdesign.models.ConnectionModel
 import kotlinx.android.synthetic.main.list_item.view.*
 
@@ -16,7 +19,7 @@ class ConnectionsItemHolder(
         item: ConnectionModel,
         itemsCount: Int,
         clickListener: (Int) -> Unit,
-        onItemActivationClicked: (Int) -> Unit
+        onItemModifyClicked: (Int, ItemModifyType) -> Unit
     ) {
         viewItem.apply {
             connectionName.text = item.title
@@ -24,15 +27,7 @@ class ConnectionsItemHolder(
             line.isVisible = adapterPosition != itemsCount - 1
 
             if (item.isActive) {
-                activeConnectionButton.text = "Active Connection"
-                activeConnectionButton.setTextColor(
-                    ContextCompat.getColor(
-                        context,
-                        R.color.color_green_light
-                    )
-                )
-                activeConnectionButton.setIconResource(R.drawable.ic_baseline_check_circle_24)
-                activeConnectionButton.setIconTintResource(R.color.color_green_light)
+                activeConnectionButton.gone()
                 statusLine.setBackgroundColor(
                     ContextCompat.getColor(
                         context,
@@ -40,15 +35,14 @@ class ConnectionsItemHolder(
                     )
                 )
             } else {
-                activeConnectionButton.text = "Connection Activation"
+                activeConnectionButton.visible()
+                activeConnectionButton.text = context.getString(R.string.activation)
                 activeConnectionButton.setTextColor(
                     ContextCompat.getColor(
                         context,
-                        R.color.color_pink_light
+                        R.color.color_green_light
                     )
                 )
-                activeConnectionButton.setIconResource(R.drawable.ic_baseline_cancel_24)
-                activeConnectionButton.setIconTintResource(R.color.color_pink_light)
                 statusLine.setBackgroundColor(
                     ContextCompat.getColor(
                         context,
@@ -62,7 +56,19 @@ class ConnectionsItemHolder(
             }
 
             activeConnectionButton.setOnClickListener {
-                onItemActivationClicked(adapterPosition)
+                onItemModifyClicked(adapterPosition, ItemModifyType.CHANGE_CONNECTION)
+            }
+
+            editNameButton.setOnClickListener {
+                onItemModifyClicked(adapterPosition, ItemModifyType.EDIT)
+            }
+
+            deleteButton.setOnClickListener {
+                onItemModifyClicked(adapterPosition, ItemModifyType.DELETE)
+            }
+
+            credentialButton.setOnClickListener {
+                onItemModifyClicked(adapterPosition, ItemModifyType.CREDENTIAL)
             }
         }
     }

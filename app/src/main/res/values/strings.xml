@@ -26,5 +26,17 @@
     <string name="back_to_menu">Back to menu</string>
     <string name="thank_you_for_sharing_your_thoughts_we_appreciate_your_feedback">Thank you for sharing your thoughts. We appreciate your feedback!</string>
     <string name="connection_quality">Connection Quality</string>
+    <string name="moka_string">Moka</string>
+    <string name="decline_string">Decline</string>
+    <string name="accept_string">Accept</string>
+    <string name="delete_connection_question">Do you want to delete this connection?</string>
+    <string name="cancel_string">Cancel</string>
+    <string name="enter_connection_name">Enter connection name</string>
+    <string name="enter_user_name">Enter username</string>
+    <string name="enter_password">Enter password</string>
+    <string name="update_string">Update</string>
+    <string name="header_active_connection">Active Connection</string>
+    <string name="header_other_connection">Available Connections</string>
+    <string name="activation">Activation</string>
 
 </resources>

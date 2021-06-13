@@ -4,13 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mkdev.vpnnewdesign.R
+import com.mkdev.vpnnewdesign.enums.ItemModifyType
 import com.mkdev.vpnnewdesign.enums.ItemViewType
 import com.mkdev.vpnnewdesign.models.ConnectionModel
+import java.util.*
 
 class ConnectionsAdapter(
     private val items: MutableList<ConnectionModel>,
     private val onItemClicked: ((Int) -> Unit),
-    private val onItemActivationClicked: ((Int) -> Unit),
+    private val onItemModifyClicked: ((Int, ItemModifyType) -> Unit),
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -45,7 +47,11 @@ class ConnectionsAdapter(
                 holder.bindView(items[position])
             }
             is ConnectionsItemHolder -> {
-                holder.bindView(items[position], itemCount, onItemClicked, onItemActivationClicked)
+                holder.bindView(
+                    items[position], itemCount,
+                    onItemClicked,
+                    onItemModifyClicked
+                )
             }
         }
     }
@@ -58,5 +64,10 @@ class ConnectionsAdapter(
         } else {
             ItemViewType.ITEM.ordinal
         }
+    }
+
+    fun swap(firstPosition: Int, secondPosition: Int) {
+        Collections.swap(items, firstPosition, secondPosition)
+        notifyItemMoved(firstPosition, secondPosition)
     }
 }

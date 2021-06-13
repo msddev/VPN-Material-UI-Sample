@@ -7,3 +7,10 @@ enum class ItemViewType {
     EMPTY,
     LOADING
 }
+
+enum class ItemModifyType {
+    EDIT,
+    DELETE,
+    CREDENTIAL,
+    CHANGE_CONNECTION
+}
