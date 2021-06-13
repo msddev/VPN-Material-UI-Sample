@@ -2,35 +2,61 @@ package com.mkdev.vpnnewdesign.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.mkdev.vpnnewdesign.R
+import com.mkdev.vpnnewdesign.enums.ItemViewType
 import com.mkdev.vpnnewdesign.models.ConnectionModel
 
 class ConnectionsAdapter(
-    private val dataList: MutableList<ConnectionModel>,
+    private val items: MutableList<ConnectionModel>,
     private val onItemClicked: ((Int) -> Unit),
     private val onItemActivationClicked: ((Int) -> Unit),
-) : RecyclerView.Adapter<ConnectionsHolder>() {
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ) = ConnectionsHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
-    )
-
-    override fun onBindViewHolder(holder: ConnectionsHolder, position: Int) {
-        holder.bindTo(dataList[position], itemCount, onItemClicked, onItemActivationClicked)
+    ): RecyclerView.ViewHolder {
+        return when (viewType) {
+            ItemViewType.HEADER.ordinal -> {
+                ConnectionsHeaderHolder(
+                    LayoutInflater.from(parent.context).inflate(
+                        R.layout.list_header,
+                        parent,
+                        false
+                    ),
+                )
+            }
+            else -> {
+                ConnectionsItemHolder(
+                    LayoutInflater.from(parent.context).inflate(
+                        R.layout.list_item,
+                        parent,
+                        false
+                    ),
+                )
+            }
+        }
     }
 
-    override fun getItemCount(): Int = dataList.size
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder) {
+            is ConnectionsHeaderHolder -> {
+                holder.bindView(items[position])
+            }
+            is ConnectionsItemHolder -> {
+                holder.bindView(items[position], itemCount, onItemClicked, onItemActivationClicked)
+            }
+        }
+    }
 
-    fun updateData(newItems: List<ConnectionModel>) {
-        val result = DiffUtil.calculateDiff(ConnectionDiffCallback(dataList, newItems))
-        result.dispatchUpdatesTo(this)
+    override fun getItemCount(): Int = items.size
 
-        dataList.clear()
-        dataList.addAll(newItems)
+    override fun getItemViewType(position: Int): Int {
+        return if (items[position].isHeader) {
+            ItemViewType.HEADER.ordinal
+        } else {
+            ItemViewType.ITEM.ordinal
+        }
     }
 }

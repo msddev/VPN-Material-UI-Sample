@@ -31,7 +31,7 @@ class ConnectionActivity : AppCompatActivity() {
         dataList.add(2, ConnectionModel(isHeader = true, title = "Other Connections"))
 
         listAdapter = ConnectionsAdapter(
-            dataList = dataList,
+            items = dataList,
             onItemClicked = { position ->
                 val lastIndex = dataList.indexOfFirst { it.isSelected }
                 if (lastIndex >= 0) {
@@ -45,15 +45,15 @@ class ConnectionActivity : AppCompatActivity() {
                 }
             },
             onItemActivationClicked = { position ->
-                val lastActiveIndex = dataList.indexOfFirst { it.isActive }
+                var lastActiveIndex = dataList.indexOfFirst { it.isActive }
                 if (lastActiveIndex >= 0 && lastActiveIndex != position) {
                     dataList[lastActiveIndex].isActive = false
                     dataList[position].isActive = true
-                    Collections.swap(dataList, position, 0)
-                    listAdapter.notifyItemMoved(position, 0)
-                    listAdapter.notifyItemMoved(1, position)
+                    Collections.swap(dataList, position, lastActiveIndex)
+                    listAdapter.notifyItemMoved(lastActiveIndex, position)
+                    listAdapter.notifyItemMoved(position, lastActiveIndex)
                     listAdapter.notifyItemChanged(position)
-                    listAdapter.notifyItemChanged(0)
+                    listAdapter.notifyItemChanged(lastActiveIndex)
                 } else {
                     Toast.makeText(this, "Unchanged", Toast.LENGTH_SHORT).show()
                 }

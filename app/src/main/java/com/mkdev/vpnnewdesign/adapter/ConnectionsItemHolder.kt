@@ -8,11 +8,11 @@ import com.mkdev.vpnnewdesign.R
 import com.mkdev.vpnnewdesign.models.ConnectionModel
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class ConnectionsHolder(
+class ConnectionsItemHolder(
     private val viewItem: View
 ) : RecyclerView.ViewHolder(viewItem) {
 
-    fun bindTo(
+    fun bindView(
         item: ConnectionModel,
         itemsCount: Int,
         clickListener: (Int) -> Unit,
