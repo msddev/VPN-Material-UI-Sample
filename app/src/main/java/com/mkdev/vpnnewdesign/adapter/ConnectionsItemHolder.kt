@@ -28,6 +28,7 @@ class ConnectionsItemHolder(
 
             if (item.isActive) {
                 activeConnectionButton.gone()
+                deleteButton.gone()
                 statusLine.setBackgroundColor(
                     ContextCompat.getColor(
                         context,
@@ -36,6 +37,7 @@ class ConnectionsItemHolder(
                 )
             } else {
                 activeConnectionButton.visible()
+                deleteButton.visible()
                 activeConnectionButton.text = context.getString(R.string.activation)
                 activeConnectionButton.setTextColor(
                     ContextCompat.getColor(
