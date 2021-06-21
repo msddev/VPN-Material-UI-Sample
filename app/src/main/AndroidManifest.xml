@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VpnNewDesign">
         <activity
-            android:name=".ConnectionActivity"
+            android:name=".ThemeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ConnectionActivity"
+            android:exported="true" />
         <activity android:name=".SubmitFeedbackActivity" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".AboutActivity" />

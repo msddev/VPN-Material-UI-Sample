@@ -38,5 +38,6 @@
     <string name="header_active_connection">Active Connection</string>
     <string name="header_other_connection">Available Connections</string>
     <string name="activation">Activation</string>
+    <string name="user_name">Username</string>
 
 </resources>

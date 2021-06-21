@@ -52,7 +52,7 @@ class ConnectionActivity : AppCompatActivity() {
 
                 if (position != lastIndex) {
                     dataList[position].isSelected = true
-                    listAdapter.notifyItemChanged(position)
+                    listView.adapter?.notifyItemChanged(position)
                 }
             },
             onItemModifyClicked = { position, actionType ->

@@ -49,4 +49,11 @@
         <item name="android:textColorHint">@color/color_gray_dark</item>
         <item name="counterTextColor">@color/color_gray_dark</item>
     </style>
+
+    <style name="Widget.MyApp.Toolbar" parent="Widget.MaterialComponents.Toolbar.Surface">
+        <item name="titleTextAppearance">@style/TextAppearance.MyApp.Headline1</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.MyApp.Headline2</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="colorSurface">?attr/colorPrimaryVariant</item>
+    </style>
 </resources>

@@ -14,14 +14,14 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Surface</item>
+        <item name="toolbarStyle">@style/Widget.MyApp.Toolbar</item>
 
         <!-- Toolbar color -->
         <item name="colorSurface">?attr/colorPrimaryVariant</item>
         <item name="primary_text_color">@color/white</item>
         <item name="secondary_text_color">@color/color_green_light</item>
 
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+        <!--<item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>-->
 
     </style>
 
