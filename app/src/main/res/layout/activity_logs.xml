@@ -17,19 +17,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="?attr/colorPrimaryVariant"
-            app:collapsedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Collapsed"
             app:contentScrim="?attr/colorPrimaryVariant"
-            app:expandedTitleMarginBottom="28dp"
-            app:expandedTitleMarginStart="72dp"
-            app:expandedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Expanded"
-            app:layout_scrollFlags="scroll|snap"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlways|snap"
             app:toolbarId="@+id/toolbar">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="?attr/actionBarSize"
-                android:paddingBottom="8dp"
+                android:paddingBottom="32dp"
                 app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
                 <com.google.android.material.textview.MaterialTextView
