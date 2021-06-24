@@ -17,8 +17,7 @@
 
         <item name="primary_text_color">@color/black</item>
         <item name="secondary_text_color">?attr/colorSecondary</item>
-
-        <item name="textInputStyle">@style/MyTextInputLayout</item>
-
+        <item name="sliderStyle">@style/Widget.App.Slider</item>
     </style>
+
 </resources>

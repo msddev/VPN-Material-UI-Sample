@@ -21,20 +21,8 @@
         <item name="primary_text_color">@color/white</item>
         <item name="secondary_text_color">@color/color_green_light</item>
 
-        <!--<item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>-->
         <item name="textInputStyle">@style/Widget.MyApp.MyTextInputLayout</item>
-
+        <item name="sliderStyle">@style/Widget.App.Slider</item>
     </style>
 
-    <!--<style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        &lt;!&ndash;<item name="colorPrimary">@color/shrine_pink_100</item>
-        <item name="colorSecondary">@color/shrine_pink_100</item>
-        <item name="colorSurface">@color/shrine_pink_light</item>
-        <item name="colorOnSurface">@color/shrine_pink_900</item>
-        <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>&ndash;&gt;
-        <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.App.Title.Text</item>
-        <item name="buttonBarPositiveButtonStyle">@style/Widget.App.Button.Positive</item>
-        <item name="buttonBarNegativeButtonStyle">@style/Widget.App.Button.Negative</item>
-        <item name="buttonBarNeutralButtonStyle">@style/Widget.App.Button</item>
-    </style>-->
 </resources>

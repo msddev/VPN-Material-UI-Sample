@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorPrimaryVariant"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Collapsed"
+            app:contentScrim="?attr/colorPrimaryVariant"
+            app:expandedTitleMarginBottom="28dp"
+            app:expandedTitleMarginStart="72dp"
+            app:expandedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Expanded"
+            app:layout_scrollFlags="scroll|snap"
+            app:toolbarId="@+id/toolbar">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                style="?attr/toolbarStyle"
+                android:background="?attr/colorPrimaryVariant"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="0dp"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_new_24" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:paddingBottom="8dp"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/timestampsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_8"
+                    android:text="Timestamps"
+                    android:textColor="@color/color_green_light"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/timestampsSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_8"
+                    android:stepSize="1"
+                    android:value="0"
+                    android:valueFrom="0"
+                    android:valueTo="2"
+                    app:labelBehavior="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/timestampsTitle" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/timestampsNone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NONE"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/timestampsSlider"
+                    app:layout_constraintTop_toBottomOf="@+id/timestampsSlider" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/timestampsShort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SHORT"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/timestampsSlider"
+                    app:layout_constraintStart_toStartOf="@+id/timestampsSlider"
+                    app:layout_constraintTop_toBottomOf="@+id/timestampsSlider" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/timestampsIso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ISO"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/timestampsSlider"
+                    app:layout_constraintTop_toBottomOf="@+id/timestampsSlider" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/logLevelTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_marginTop="16dp"
+                    android:text="Log Verbosity Level"
+                    android:textColor="@color/color_green_light"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/timestampsNone" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/logLevelSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_8"
+                    android:stepSize="1"
+                    android:value="1"
+                    android:valueFrom="0"
+                    android:valueTo="3"
+                    app:labelBehavior="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/logLevelTitle" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/logLevelNone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NONE"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@id/logLevelLow"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="@+id/logLevelSlider"
+                    app:layout_constraintTop_toBottomOf="@+id/logLevelSlider" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/logLevelLow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOW"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@id/logLevelMedium"
+                    app:layout_constraintStart_toEndOf="@+id/logLevelNone"
+                    app:layout_constraintTop_toBottomOf="@+id/logLevelSlider" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/logLevelMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MEDIUM"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/logLevelHigh"
+                    app:layout_constraintStart_toEndOf="@+id/logLevelLow"
+                    app:layout_constraintTop_toBottomOf="@+id/logLevelSlider" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/logLevelHigh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HIGH"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/logLevelSlider"
+                    app:layout_constraintStart_toEndOf="@id/logLevelMedium"
+                    app:layout_constraintTop_toBottomOf="@+id/logLevelSlider" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
