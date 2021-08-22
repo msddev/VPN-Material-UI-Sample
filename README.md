@@ -2,8 +2,8 @@
 This is a sample material UI for VPN.
 
 ## Screenshots
-<img src="screenshots/screenshot_01.png" width="300">  <img src="screenshots/screenshot_07.png" width="300">
-<img src="screenshots/screenshot_02.png" width="300">  <img src="screenshots/screenshot_03.png" width="300">
+<img src="screenshots/screenshot_01.png" width="250">  <img src="screenshots/screenshot_07.png" width="250">  <img src="screenshots/screenshot_02.png" width="250">
+<img src="screenshots/screenshot_03.png" width="300">
 <img src="screenshots/screenshot_04.png" width="300">  <img src="screenshots/screenshot_05.png" width="300">
 <img src="screenshots/screenshot_06.png" width="300">
 
