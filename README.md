@@ -1,5 +1,5 @@
 # VPN Material UI Sample
-This is a sample material UI for VPN.
+It is a sample material UI for VPN applications. In this sample UI, I tried to follow the [guide of material design](https://material.io/develop/android). This sample code was developed with a dark and light theme and kotlin logic and some animations. 
 
 ## Screenshots
 <img src="screenshots/screenshot_01.png" width="250">  <img src="screenshots/screenshot_07.png" width="250">  <img src="screenshots/screenshot_02.png" width="250">
