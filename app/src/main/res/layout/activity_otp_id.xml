@@ -21,30 +21,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/otpIdLogoIconImage"
-            android:layout_width="25dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_logo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/otpIdLogoTextImage"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.08" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/otpIdLogoTextImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="center"
-            android:src="@drawable/img_vika_text"
-            app:layout_constraintBottom_toBottomOf="@+id/otpIdLogoIconImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/otpIdLogoIconImage"
-            app:layout_constraintTop_toTopOf="@+id/otpIdLogoIconImage" />
+        <include layout="@layout/layout_logo_merge" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/otpIdDescriptionString"
@@ -56,7 +33,7 @@
             android:textColor="?primary_text_color"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/otpIdLogoIconImage" />
+            app:layout_constraintTop_toBottomOf="@+id/iconImage" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/otpIdDownloadStatusString"

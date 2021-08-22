@@ -12,6 +12,7 @@ import com.mkdev.vpnnewdesign.adapter.ConnectionsAdapter
 import com.mkdev.vpnnewdesign.enums.ItemModifyType
 import com.mkdev.vpnnewdesign.models.ConnectionModel
 import kotlinx.android.synthetic.main.activity_connection.*
+import kotlinx.android.synthetic.main.app_bar_detail.*
 
 
 class ConnectionActivity : AppCompatActivity() {
@@ -96,6 +97,15 @@ class ConnectionActivity : AppCompatActivity() {
 
             })
         listView.adapter = listAdapter
+
+        setupToolbar()
+    }
+
+    private fun setupToolbar() {
+        detailToolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
+        detailToolbar.title = ""
     }
 
     private fun showDialog(

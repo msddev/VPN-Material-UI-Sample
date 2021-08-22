@@ -22,30 +22,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/mainLogoIconImage"
-            android:layout_width="25dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_logo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/mainLogoTextImage"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.04" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/mainLogoTextImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="center"
-            android:src="@drawable/img_vika_text"
-            app:layout_constraintBottom_toBottomOf="@+id/mainLogoIconImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/mainLogoIconImage"
-            app:layout_constraintTop_toTopOf="@+id/mainLogoIconImage" />
+        <include layout="@layout/layout_logo_merge" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/mainLogoCircleImageA"
@@ -59,7 +36,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mainLogoIconImage"
+            app:layout_constraintTop_toBottomOf="@+id/iconImage"
             app:layout_constraintVertical_bias="0.1" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -105,7 +82,7 @@
             app:layout_constraintBottom_toTopOf="@+id/mainTimerString"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mainLogoIconImage"
+            app:layout_constraintTop_toBottomOf="@+id/iconImage"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -140,12 +117,12 @@
             android:background="@drawable/rounded_curve_shape"
             android:orientation="vertical"
             android:padding="8dp"
-            app:layout_constraintVertical_bias="0.8"
             android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/mainSelectConnectionString"
-            app:layout_constraintEnd_toEndOf="@+id/maimQrButton"
-            app:layout_constraintStart_toStartOf="@+id/maimQrButton"
+            app:layout_constraintEnd_toEndOf="@+id/connectionListButton"
+            app:layout_constraintStart_toStartOf="@+id/connectionListButton"
             app:layout_constraintTop_toBottomOf="@+id/mainDownloadStatusString"
+            app:layout_constraintVertical_bias="0.8"
             tools:visibility="visible">
 
             <com.google.android.material.textview.MaterialTextView
@@ -175,9 +152,9 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:alpha="0.1"
-                app:layout_constraintStart_toStartOf="@id/lineChart"
                 android:background="@color/color_gray_light"
                 app:layout_constraintEnd_toEndOf="@id/lineChart"
+                app:layout_constraintStart_toStartOf="@id/lineChart"
                 app:layout_constraintTop_toTopOf="@id/lineChart" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -227,18 +204,18 @@
                 android:id="@+id/lineChart"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:paddingStart="-60dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                app:chart_axis="none"
+                android:paddingStart="-60dp"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp"
+                app:chart_axis="none"
                 app:chart_lineColor="#ffffff"
                 app:chart_lineThickness="1dp"
                 app:chart_smoothLine="true"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/mainConnectionQualityNormalTitle"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainConnectionQualityNormalTitle"
                 app:layout_constraintTop_toBottomOf="@id/mainConnectionQualityTitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -251,12 +228,12 @@
             android:text="@string/select_connection"
             android:textColor="@color/color_gray_light"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/maimQrButton"
+            app:layout_constraintBottom_toTopOf="@+id/connectionListButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/maimQrButton"
+            android:id="@+id/connectionListButton"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="32dp"
@@ -281,9 +258,9 @@
             android:elevation="5dp"
             android:rotation="-90"
             android:tint="@color/color_gray_light"
-            app:layout_constraintBottom_toBottomOf="@+id/maimQrButton"
-            app:layout_constraintEnd_toEndOf="@+id/maimQrButton"
-            app:layout_constraintTop_toTopOf="@+id/maimQrButton"
+            app:layout_constraintBottom_toBottomOf="@+id/connectionListButton"
+            app:layout_constraintEnd_toEndOf="@+id/connectionListButton"
+            app:layout_constraintTop_toTopOf="@+id/connectionListButton"
             app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
 
         <androidx.constraintlayout.widget.Group

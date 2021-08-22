@@ -65,10 +65,13 @@ class MainActivity : BaseActivity() {
             showOnViews()
             timer?.cancel()
         }
+        connectionListButton.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ConnectionActivity::class.java))
+        }
     }
 
     private fun startTimer() {
-        timer = object : CountDownTimer(5*60*1000, 500) {
+        timer = object : CountDownTimer(5 * 60 * 1000, 500) {
             override fun onTick(millisUntilFinished: Long) {
                 lineSet.remove(lineSet.elementAt(1))
                 val randomNumber = (0..10).random()
@@ -202,6 +205,4 @@ class MainActivity : BaseActivity() {
         timer?.cancel()
         super.onDestroy()
     }
-
-    override fun onBackPressed() {}
 }

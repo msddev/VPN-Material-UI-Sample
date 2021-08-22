@@ -39,6 +39,7 @@ class OtpCodeActivity : BaseActivity() {
 
         otpCodeNextAction.setOnClickListener {
             startActivity(Intent(this@OtpCodeActivity, MainActivity::class.java))
+            finish()
         }
     }
 
